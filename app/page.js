@@ -157,9 +157,9 @@ export default function Home() {
                 maxWidth: '650px'
               }}
             >
-              We help New York businesses stop bleeding money on repetitive tasks.
-              Our AI agents and workflow automation cut operational costs by up to 60%—so
-              your team can focus on what actually moves the needle.
+              Your team spends how many hours on data entry? Scheduling? Chasing invoices?
+              We build AI systems that handle that stuff so you can stop bleeding money.
+              One client cut 23 hours of weekly admin work down to 2. That's real.
             </p>
 
             {/* CTA Buttons */}
@@ -233,21 +233,20 @@ export default function Home() {
               Why New York Businesses Choose Us for AI Automation
             </h2>
             <p style={{ fontSize: '1.125rem', marginBottom: '2rem' }}>
-              Look, running a business in New York is already hard enough. You've got razor-thin margins,
-              competition on every corner, and employees who cost a fortune. So why are you still paying
-              people to do tasks a machine could handle?
+              Running a business in New York? You already know the drill. Rent's insane. Good employees
+              cost a fortune. And your competition isn't sleeping. So here's my question: why is your
+              $85k/year operations person still copy-pasting data between spreadsheets at 4pm on a Friday?
             </p>
             <p style={{ marginBottom: '2rem' }}>
-              We're an <strong>AI automation agency in New York</strong> that specializes in one thing:
-              making your operations leaner without the enterprise price tag. Whether you're a Brooklyn
-              startup burning through runway or a Manhattan firm drowning in paperwork, we build AI systems
-              that actually work—not just fancy demos that collect dust.
+              We're an <strong>AI automation agency in New York</strong> that does one thing well: we
+              make your business run leaner. Brooklyn startup burning cash? Manhattan law firm buried
+              in documents? We've seen it. We build AI that works in the real world, not just impressive
+              demos that get filed away and forgotten.
             </p>
             <p>
-              From AI agents that handle customer inquiries 24/7 to workflow automation that eliminates
-              your team's most soul-crushing busywork, we've helped businesses across all five boroughs
-              reclaim thousands of hours. And yeah, most of our clients see real ROI within the first
-              90 days. Not "potential" ROI. Actual dollars back in their pocket.
+              One of our real estate clients used to spend 6 hours daily on lead follow-up. Now? 40 minutes.
+              Their AI handles the initial outreach, qualifies prospects, and only escalates the hot ones.
+              That's not hypothetical ROI. That's their Tuesday.
             </p>
           </div>
         </div>
@@ -260,8 +259,8 @@ export default function Home() {
             <span className="badge">Our Services</span>
             <h2>AI Automation Services for New York Businesses</h2>
             <p>
-              From quick-win automations to full-scale AI deployments, we match the solution to your
-              actual problem—not the other way around.
+              Not every problem needs a $50k AI solution. Sometimes it's a $3k workflow that saves you
+              15 hours a week. We figure out which one you actually need.
             </p>
           </div>
 
@@ -270,8 +269,9 @@ export default function Home() {
               <div className="service-icon"><BotIcon /></div>
               <h3 style={{ marginBottom: '0.75rem' }}>AI Agents & Chatbots</h3>
               <p style={{ marginBottom: '1rem' }}>
-                AI assistants that handle customer service, lead qualification, and appointment booking.
-                They work 24/7, never call in sick, and actually follow your scripts.
+                Picture this: it's 2am and someone's on your website ready to book. Your AI agent
+                qualifies them, answers questions, and schedules for Monday morning. You wake up
+                to a booked calendar. No missed leads at 2am anymore.
               </p>
               <ul style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem' }}>
                 <li>• Customer support automation</li>
@@ -285,8 +285,9 @@ export default function Home() {
               <div className="service-icon"><WorkflowIcon /></div>
               <h3 style={{ marginBottom: '0.75rem' }}>Workflow Automation</h3>
               <p style={{ marginBottom: '1rem' }}>
-                Connect your CRM, email, spreadsheets, and databases into seamless automated workflows.
-                No more copy-pasting between apps or chasing down missing data.
+                Your sales rep closes a deal. The invoice generates automatically. Client info syncs
+                to your CRM. Onboarding email goes out. All before they've finished their coffee.
+                That's what we build.
               </p>
               <ul style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem' }}>
                 <li>• CRM automation & sync</li>
@@ -386,8 +387,8 @@ export default function Home() {
             <span className="badge">How It Works</span>
             <h2>Our AI Automation Process</h2>
             <p>
-              We've refined this process with dozens of NYC businesses. It's designed to minimize
-              disruption while maximizing results.
+              We've done this enough times to know what works. Here's exactly what happens when you
+              work with us.
             </p>
           </div>
 
@@ -403,8 +404,8 @@ export default function Home() {
             <div className="process-step" data-step="2" style={{ paddingBottom: '2.5rem' }}>
               <h3>Operations Audit</h3>
               <p>
-                We map your current workflows and identify the highest-ROI automation opportunities.
-                You'll get a clear roadmap showing exactly what to automate first and why.
+                We dig into how your team actually works. Not how they should work, how they do work.
+                Then we show you where the easy wins are. "Automate this first, you'll save 10 hours a week."
               </p>
             </div>
 
@@ -449,11 +450,11 @@ export default function Home() {
           <div style={{ maxWidth: '700px', margin: '0 auto' }}>
             <FAQItem
               question="How much does AI automation cost for New York businesses?"
-              answer="AI automation projects for NYC businesses typically range from $3,500 for basic workflow automation to $25,000+ for enterprise AI agent deployments. The honest answer is: it depends on what you're trying to automate. A simple Zapier-style workflow is different from a custom AI agent that handles complex customer interactions. We offer free consultations specifically to assess your needs and give you realistic pricing—not some inflated enterprise quote designed to scare you into a 'basic' package."
+              answer="Straight up: basic workflow stuff runs $3,500 to $8,000. Think connecting your CRM to your invoicing, automating follow-up emails, that kind of thing. Full AI agent deployments where we're building something custom? $15k to $25k+, sometimes more. Depends on how messy your current setup is and what you're trying to accomplish. We do a free call first so we can give you a real number, not some enterprise fluff quote."
             />
             <FAQItem
               question="How long does it take to implement AI automation?"
-              answer="Most projects are completed within 2-8 weeks. Simple workflow automations can be live within days—literally, some clients are up and running by the following week. Complex AI agent systems that need to integrate with multiple databases, learn your specific processes, or handle compliance requirements take 4-8 weeks. We prioritize quick wins so you see ROI fast, then build on that foundation."
+              answer="Last month we had a client live in 5 days. Simple workflow connecting their booking system to their CRM. Done. But that's the easy stuff. If you need an AI agent that understands your specific industry lingo, integrates with 4 different systems, and needs compliance sign-off? More like 6-8 weeks. We always try to get you a quick win in the first 2 weeks though, even on bigger projects. Keeps the momentum going."
             />
             <FAQItem
               question="Do you work with businesses outside Manhattan?"
@@ -465,7 +466,7 @@ export default function Home() {
             />
             <FAQItem
               question="Will AI automation replace my employees?"
-              answer="Usually? No. Here's what actually happens: AI handles the tedious stuff nobody wants to do anyway—data entry, initial customer inquiries, report generation, scheduling. Your people then focus on work that requires human judgment, creativity, and relationship-building. Most of our clients don't lay people off; they redeploy them to higher-value activities or finally have bandwidth to grow without proportionally growing headcount."
+              answer="In my experience? Almost never plays out that way. What happens is your $75k operations person stops spending 3 hours a day on data entry and starts doing the strategic stuff you actually hired them for. One client told me their best employee was about to quit from boredom—too much manual work. After automation, she's now running client strategy. Stayed three more years. Most businesses use this to grow without hiring, not to fire people."
             />
             <FAQItem
               question="What if AI automation doesn't work for my business?"
@@ -494,11 +495,10 @@ export default function Home() {
                 delivers results—not just impressive demos.
               </p>
               <p style={{ marginBottom: '1.5rem' }}>
-                Founded by Shimon Carroll in 2024, we specialize in turning AI hype into operational
-                reality. Our team combines deep technical expertise with business pragmatism. We're
-                not academics theorizing about AI potential; we're operators who've deployed AI
-                agents, automated complex workflows, and built custom solutions for real businesses
-                with real constraints.
+                I started this after watching too many businesses get burned by AI consultants who'd
+                never actually run a company. They'd hand over a 50-page strategy deck and disappear.
+                We do it differently. Shimon Carroll, founder, has been in the trenches since 2024
+                building stuff that works. Not theory. Not decks. Working systems that save real money.
               </p>
               <p style={{ marginBottom: '2rem' }}>
                 We serve clients across Manhattan, Brooklyn, Queens, the Bronx, Staten Island, Long
@@ -562,8 +562,8 @@ export default function Home() {
             <span className="badge">Get Started</span>
             <h2>Ready to Automate Your NYC Business?</h2>
             <p>
-              Drop us a line or give us a call. No pressure, no 47-slide deck—just a
-              straight conversation about whether AI automation makes sense for you.
+              Got a question? Shoot us a message or just call. I personally get back to everyone
+              within 24 hours. If AI isn't right for you, I'll tell you that too. No pitch, no deck.
             </p>
           </div>
 
