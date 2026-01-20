@@ -1,0 +1,27 @@
+{
+  "name": "aiautomationagencynyc",
+  "version": "1.0.0",
+  "description": "AI Automation Agency New York - Transform Your Business with AI",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ztokar/aiautomationagencynyc.git"
+  },
+  "keywords": ["AI", "automation", "New York", "NYC", "AI agents", "workflow automation"],
+  "author": "Shimon Carroll",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ztokar/aiautomationagencynyc/issues"
+  },
+  "homepage": "https://aiautomationagencynewyork.com",
+  "dependencies": {
+    "next": "^16.1.4",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  }
+}
