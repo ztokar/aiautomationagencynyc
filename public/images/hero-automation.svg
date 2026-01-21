@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fde047;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ca8a04;stop-opacity:1" />
+    </linearGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fde047;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#fde047;stop-opacity:0" />
+    </radialGradient>
+
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fde047;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#fde047;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="400" fill="#0a0a0a"/>
+
+  <!-- Ambient glow -->
+  <circle cx="250" cy="200" r="140" fill="url(#centerGlow)">
+    <animate attributeName="r" values="130;150;130" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Neural network connection lines -->
+  <g stroke="#fde047" stroke-width="1" opacity="0.25">
+    <!-- Horizontal main connections -->
+    <line x1="60" y1="200" x2="150" y2="200"/>
+    <line x1="150" y1="200" x2="250" y2="200"/>
+    <line x1="250" y1="200" x2="350" y2="200"/>
+    <line x1="350" y1="200" x2="440" y2="200"/>
+
+    <!-- Diagonal connections from left node -->
+    <line x1="150" y1="200" x2="200" y2="120"/>
+    <line x1="150" y1="200" x2="200" y2="280"/>
+
+    <!-- Diagonal connections from right node -->
+    <line x1="350" y1="200" x2="300" y2="120"/>
+    <line x1="350" y1="200" x2="300" y2="280"/>
+
+    <!-- Top layer connections -->
+    <line x1="200" y1="120" x2="250" y2="120"/>
+    <line x1="250" y1="120" x2="300" y2="120"/>
+    <line x1="250" y1="200" x2="250" y2="120"/>
+
+    <!-- Bottom layer connections -->
+    <line x1="200" y1="280" x2="250" y2="280"/>
+    <line x1="250" y1="280" x2="300" y2="280"/>
+    <line x1="250" y1="200" x2="250" y2="280"/>
+
+    <!-- Extended outer connections -->
+    <line x1="60" y1="200" x2="100" y2="100"/>
+    <line x1="60" y1="200" x2="100" y2="300"/>
+    <line x1="440" y1="200" x2="400" y2="100"/>
+    <line x1="440" y1="200" x2="400" y2="300"/>
+    <line x1="100" y1="100" x2="200" y2="120"/>
+    <line x1="100" y1="300" x2="200" y2="280"/>
+    <line x1="400" y1="100" x2="300" y2="120"/>
+    <line x1="400" y1="300" x2="300" y2="280"/>
+  </g>
+
+  <!-- Animated data flow lines -->
+  <g stroke="#fde047" stroke-width="2" fill="none" opacity="0.5" stroke-dasharray="6,4">
+    <line x1="60" y1="200" x2="150" y2="200">
+      <animate attributeName="stroke-dashoffset" values="20;0" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="350" y1="200" x2="440" y2="200">
+      <animate attributeName="stroke-dashoffset" values="20;0" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="200" y1="120" x2="300" y2="120">
+      <animate attributeName="stroke-dashoffset" values="20;0" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="200" y1="280" x2="300" y2="280">
+      <animate attributeName="stroke-dashoffset" values="20;0" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Left input node -->
+  <g filter="url(#glow)">
+    <circle cx="60" cy="200" r="14" fill="none" stroke="#fde047" stroke-width="2">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="200" r="7" fill="#fde047"/>
+  </g>
+
+  <!-- Left processor node -->
+  <g filter="url(#glow)">
+    <rect x="138" y="188" width="24" height="24" rx="5" fill="none" stroke="#fde047" stroke-width="2">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </rect>
+    <rect x="144" y="194" width="12" height="12" rx="2" fill="#fde047"/>
+  </g>
+
+  <!-- Central AI core - triple ring design -->
+  <g filter="url(#softGlow)">
+    <circle cx="250" cy="200" r="35" fill="none" stroke="url(#goldGradient)" stroke-width="3">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="200" r="24" fill="none" stroke="#fde047" stroke-width="2" opacity="0.5">
+      <animate attributeName="r" values="22;26;22" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="200" r="10" fill="url(#goldGradient)"/>
+  </g>
+
+  <!-- Right processor node -->
+  <g filter="url(#glow)">
+    <rect x="338" y="188" width="24" height="24" rx="5" fill="none" stroke="#fde047" stroke-width="2">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </rect>
+    <rect x="344" y="194" width="12" height="12" rx="2" fill="#fde047"/>
+  </g>
+
+  <!-- Right output node -->
+  <g filter="url(#glow)">
+    <circle cx="440" cy="200" r="14" fill="none" stroke="#fde047" stroke-width="2">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+    </circle>
+    <circle cx="440" cy="200" r="7" fill="#fde047"/>
+  </g>
+
+  <!-- Top layer nodes -->
+  <g filter="url(#glow)">
+    <circle cx="100" cy="100" r="8" fill="none" stroke="#fde047" stroke-width="1.5" opacity="0.7">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="100" r="4" fill="#fde047" opacity="0.8"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="200" cy="120" r="10" fill="none" stroke="#fde047" stroke-width="2">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.2s"/>
+    </circle>
+    <circle cx="200" cy="120" r="5" fill="#fde047"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="250" cy="120" r="6" fill="#fde047" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" begin="0.4s"/>
+    </circle>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="300" cy="120" r="10" fill="none" stroke="#fde047" stroke-width="2">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="300" cy="120" r="5" fill="#fde047"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="400" cy="100" r="8" fill="none" stroke="#fde047" stroke-width="1.5" opacity="0.7">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite" begin="0.7s"/>
+    </circle>
+    <circle cx="400" cy="100" r="4" fill="#fde047" opacity="0.8"/>
+  </g>
+
+  <!-- Bottom layer nodes -->
+  <g filter="url(#glow)">
+    <circle cx="100" cy="300" r="8" fill="none" stroke="#fde047" stroke-width="1.5" opacity="0.7">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+    <circle cx="100" cy="300" r="4" fill="#fde047" opacity="0.8"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="200" cy="280" r="10" fill="none" stroke="#fde047" stroke-width="2">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </circle>
+    <circle cx="200" cy="280" r="5" fill="#fde047"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="250" cy="280" r="6" fill="#fde047" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" begin="0.8s"/>
+    </circle>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="300" cy="280" r="10" fill="none" stroke="#fde047" stroke-width="2">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.4s"/>
+    </circle>
+    <circle cx="300" cy="280" r="5" fill="#fde047"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="400" cy="300" r="8" fill="none" stroke="#fde047" stroke-width="1.5" opacity="0.7">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite" begin="0.1s"/>
+    </circle>
+    <circle cx="400" cy="300" r="4" fill="#fde047" opacity="0.8"/>
+  </g>
+
+  <!-- Flowing data particles -->
+  <circle r="4" fill="#fde047" filter="url(#glow)">
+    <animateMotion dur="2.5s" repeatCount="indefinite" path="M 60 200 L 150 200"/>
+  </circle>
+  <circle r="4" fill="#fde047" filter="url(#glow)">
+    <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.8s" path="M 350 200 L 440 200"/>
+  </circle>
+  <circle r="3" fill="#fde047" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" begin="0.4s" path="M 150 200 L 200 120"/>
+  </circle>
+  <circle r="3" fill="#fde047" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" begin="1.2s" path="M 300 120 L 350 200"/>
+  </circle>
+  <circle r="3" fill="#fde047" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" begin="0.6s" path="M 150 200 L 200 280"/>
+  </circle>
+  <circle r="3" fill="#fde047" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" begin="1.4s" path="M 300 280 L 350 200"/>
+  </circle>
+
+  <!-- Decorative corner accents -->
+  <circle cx="30" cy="50" r="2" fill="#fde047" opacity="0.3"/>
+  <circle cx="470" cy="50" r="2" fill="#fde047" opacity="0.3"/>
+  <circle cx="30" cy="350" r="2" fill="#fde047" opacity="0.3"/>
+  <circle cx="470" cy="350" r="2" fill="#fde047" opacity="0.3"/>
+</svg>

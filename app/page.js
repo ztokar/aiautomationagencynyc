@@ -1,17 +1,12 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 // Icons as inline SVGs for performance
 const CheckIcon = () => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-  </svg>
-)
-
-const StarIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-    <path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" />
   </svg>
 )
 
@@ -95,19 +90,6 @@ function FAQItem({ question, answer }) {
 }
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  })
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Form submission logic here
-    window.location.href = `mailto:info@owntheclimb.com?subject=AI Automation Inquiry from ${formData.name}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`)}`
-  }
-
   return (
     <main>
       {/* ==================== HERO SECTION ==================== */}
@@ -134,17 +116,37 @@ export default function Home() {
         />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div style={{ maxWidth: '800px' }}>
+          {/* Hero automation illustration - background */}
+          <div
+            style={{
+              position: 'absolute',
+              right: '0',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              width: '500px',
+              height: '400px',
+              opacity: 0.8,
+              zIndex: 0
+            }}
+            className="hero-illustration"
+            aria-hidden="true"
+          >
+            <img
+              src="/images/hero-automation.svg"
+              alt=""
+              style={{ width: '100%', height: '100%' }}
+            />
+          </div>
+          <div style={{ maxWidth: '800px', position: 'relative', zIndex: 1 }}>
             {/* Trust badge */}
             <div className="badge animate-in" style={{ marginBottom: '1.5rem' }}>
-              <StarIcon />
-              <span>5.0 Rated • Trusted by NYC Businesses</span>
+              <span>Trusted by service-based businesses across New York City</span>
             </div>
 
             {/* H1 with primary keyword */}
             <h1 className="animate-in delay-1" style={{ marginBottom: '1.5rem' }}>
-              AI Automation Agency{' '}
-              <span className="text-gradient">New York</span>
+              AI Automation Agency for{' '}
+              <span className="text-gradient">NYC Businesses</span>
             </h1>
 
             {/* Subheadline with value proposition */}
@@ -157,9 +159,9 @@ export default function Home() {
                 maxWidth: '650px'
               }}
             >
-              Your team spends how many hours on data entry? Scheduling? Chasing invoices?
-              We build AI systems that handle that stuff so you can stop bleeding money.
-              One client cut 23 hours of weekly admin work down to 2. That's real.
+              We help New York service businesses reduce manual work through practical AI automation.
+              Data entry, scheduling, invoicing, follow-ups—if your team's drowning in repetitive tasks,
+              we can probably help.
             </p>
 
             {/* CTA Buttons */}
@@ -168,10 +170,10 @@ export default function Home() {
               style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3rem' }}
             >
               <a href="#contact" className="btn btn-primary">
-                Get Your Free Consultation
+                Free AI Opportunity Audit
               </a>
-              <a href="tel:+14432652667" className="btn btn-secondary">
-                Call (443) 265-2667
+              <a href="tel:+16468142452" className="btn btn-secondary">
+                No-Obligation Call: (646) 814-2452
               </a>
             </div>
 
@@ -183,15 +185,15 @@ export default function Home() {
               </div>
               <div className="trust-item">
                 <CheckIcon />
-                <span>NYC-Based Team</span>
+                <span>Remote Team Serving NYC</span>
               </div>
               <div className="trust-item">
                 <CheckIcon />
-                <span>ROI in 90 Days</span>
+                <span>Built for Service Businesses</span>
               </div>
               <div className="trust-item">
                 <CheckIcon />
-                <span>HIPAA Compliant Options</span>
+                <span>HIPAA-Ready Options</span>
               </div>
             </div>
           </div>
@@ -203,20 +205,20 @@ export default function Home() {
         <div className="container">
           <div className="grid-4">
             <div className="stat-block">
-              <div className="stat-number">60%</div>
-              <div className="stat-label">Average Cost Reduction</div>
+              <div className="stat-number">5–20+</div>
+              <div className="stat-label">Typical Hours Saved Weekly</div>
             </div>
             <div className="stat-block">
-              <div className="stat-number">10-100x</div>
-              <div className="stat-label">Workflow Speed Increase</div>
+              <div className="stat-number">2–8</div>
+              <div className="stat-label">Weeks to Deployment</div>
             </div>
             <div className="stat-block">
-              <div className="stat-number">15+</div>
-              <div className="stat-label">NYC Businesses Served</div>
+              <div className="stat-number">SMB</div>
+              <div className="stat-label">& Mid-Market Focus</div>
             </div>
             <div className="stat-block">
-              <div className="stat-number">99.98%</div>
-              <div className="stat-label">Data Processing Accuracy</div>
+              <div className="stat-number">HIPAA</div>
+              <div className="stat-label">Compliance-Ready Options</div>
             </div>
           </div>
         </div>
@@ -233,20 +235,20 @@ export default function Home() {
               Why New York Businesses Choose Us for AI Automation
             </h2>
             <p style={{ fontSize: '1.125rem', marginBottom: '2rem' }}>
-              Running a business in New York? You already know the drill. Rent's insane. Good employees
-              cost a fortune. And your competition isn't sleeping. So here's my question: why is your
-              $85k/year operations person still copy-pasting data between spreadsheets at 4pm on a Friday?
+              Running a business in New York? Overhead's brutal, good people are expensive, and your
+              competition isn't slowing down. Meanwhile, someone on your team is probably spending
+              hours every week on tasks a well-designed AI system could handle automatically.
             </p>
             <p style={{ marginBottom: '2rem' }}>
-              We're an <strong>AI automation agency in New York</strong> that does one thing well: we
-              make your business run leaner. Brooklyn startup burning cash? Manhattan law firm buried
-              in documents? We've seen it. We build AI that works in the real world, not just impressive
-              demos that get filed away and forgotten.
+              We're an <strong>AI automation agency serving New York</strong> that focuses on one thing:
+              reducing manual workload for service-based businesses. Brooklyn startup? Manhattan law firm?
+              Queens-based agency? We build AI that works in the real world—not impressive demos
+              that get filed away and forgotten.
             </p>
             <p>
-              One of our real estate clients used to spend 6 hours daily on lead follow-up. Now? 40 minutes.
-              Their AI handles the initial outreach, qualifies prospects, and only escalates the hot ones.
-              That's not hypothetical ROI. That's their Tuesday.
+              A real estate firm we worked with was spending most of their day on lead follow-up.
+              We built an AI system that handles initial outreach, qualifies prospects, and escalates
+              the ones worth talking to. The result? Their team now focuses on actual deals, not admin.
             </p>
           </div>
         </div>
@@ -265,13 +267,22 @@ export default function Home() {
           </div>
 
           <div className="grid-3">
-            <div className="card">
+            <a href="/ai-agents-nyc/" className="card" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div style={{ marginBottom: '1rem', borderRadius: '8px', overflow: 'hidden' }}>
+                <Image
+                  src="/images/service-ai-agents.svg"
+                  alt="AI Agents automation illustration"
+                  width={400}
+                  height={300}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </div>
               <div className="service-icon"><BotIcon /></div>
               <h3 style={{ marginBottom: '0.75rem' }}>AI Agents & Chatbots</h3>
               <p style={{ marginBottom: '1rem' }}>
                 Picture this: it's 2am and someone's on your website ready to book. Your AI agent
                 qualifies them, answers questions, and schedules for Monday morning. You wake up
-                to a booked calendar. No missed leads at 2am anymore.
+                to a booked calendar.
               </p>
               <ul style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem' }}>
                 <li>• Customer support automation</li>
@@ -279,15 +290,23 @@ export default function Home() {
                 <li>• Appointment scheduling AI</li>
                 <li>• Internal knowledge assistants</li>
               </ul>
-            </div>
+            </a>
 
-            <div className="card">
+            <a href="/workflow-automation-nyc/" className="card" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div style={{ marginBottom: '1rem', borderRadius: '8px', overflow: 'hidden' }}>
+                <Image
+                  src="/images/service-workflow.svg"
+                  alt="Workflow automation illustration"
+                  width={400}
+                  height={300}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </div>
               <div className="service-icon"><WorkflowIcon /></div>
               <h3 style={{ marginBottom: '0.75rem' }}>Workflow Automation</h3>
               <p style={{ marginBottom: '1rem' }}>
                 Your sales rep closes a deal. The invoice generates automatically. Client info syncs
-                to your CRM. Onboarding email goes out. All before they've finished their coffee.
-                That's what we build.
+                to your CRM. Onboarding email goes out. That's the kind of system we build.
               </p>
               <ul style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem' }}>
                 <li>• CRM automation & sync</li>
@@ -295,14 +314,23 @@ export default function Home() {
                 <li>• Data entry elimination</li>
                 <li>• Report generation</li>
               </ul>
-            </div>
+            </a>
 
-            <div className="card">
+            <a href="/custom-ai-solutions-nyc/" className="card" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div style={{ marginBottom: '1rem', borderRadius: '8px', overflow: 'hidden' }}>
+                <Image
+                  src="/images/service-custom-ai.svg"
+                  alt="Custom AI solutions dashboard illustration"
+                  width={400}
+                  height={300}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </div>
               <div className="service-icon"><CodeIcon /></div>
               <h3 style={{ marginBottom: '0.75rem' }}>Custom AI Solutions</h3>
               <p style={{ marginBottom: '1rem' }}>
                 Bespoke AI applications built specifically for your business. Portals, dashboards,
-                and tools that give you a competitive edge nobody else has.
+                and tools tailored to how your team actually works.
               </p>
               <ul style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem' }}>
                 <li>• Custom AI dashboards</li>
@@ -310,18 +338,18 @@ export default function Home() {
                 <li>• Industry-specific AI tools</li>
                 <li>• API integrations</li>
               </ul>
-            </div>
+            </a>
 
             <div className="card">
               <div className="service-icon"><BrainIcon /></div>
               <h3 style={{ marginBottom: '0.75rem' }}>AI Strategy & Training</h3>
               <p style={{ marginBottom: '1rem' }}>
-                Not sure where to start? We audit your operations, identify the highest-ROI automation
+                Not sure where to start? We audit your operations, identify high-value automation
                 opportunities, and train your team to leverage AI effectively.
               </p>
               <ul style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem' }}>
                 <li>• AI readiness assessments</li>
-                <li>• ROI opportunity mapping</li>
+                <li>• Opportunity mapping</li>
                 <li>• Team training workshops</li>
                 <li>• Executive AI briefings</li>
               </ul>
@@ -331,11 +359,11 @@ export default function Home() {
               <div className="service-icon"><RocketIcon /></div>
               <h3 style={{ marginBottom: '0.75rem' }}>Rapid Implementation</h3>
               <p style={{ marginBottom: '1rem' }}>
-                Most NYC agencies want 6-month contracts before they even start. We ship working
-                automations in weeks, not quarters. Agile methodology, real results.
+                Most agencies want 6-month contracts before they even start. We ship working
+                automations in weeks, not quarters. Agile methodology, milestone-based.
               </p>
               <ul style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem' }}>
-                <li>• 2-8 week delivery</li>
+                <li>• 2-8 week typical delivery</li>
                 <li>• Milestone-based pricing</li>
                 <li>• Quick wins first approach</li>
                 <li>• Ongoing optimization</li>
@@ -346,11 +374,11 @@ export default function Home() {
               <div className="service-icon"><ShieldIcon /></div>
               <h3 style={{ marginBottom: '0.75rem' }}>Compliance & Security</h3>
               <p style={{ marginBottom: '1rem' }}>
-                NYC's regulated industries need AI that plays by the rules. We build HIPAA-compliant,
-                SOC 2-ready systems that won't land you in hot water.
+                NYC's regulated industries need AI that plays by the rules. We can build
+                HIPAA-compliant, SOC 2-ready systems for sensitive data environments.
               </p>
               <ul style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem' }}>
-                <li>• HIPAA compliance</li>
+                <li>• HIPAA compliance options</li>
                 <li>• Data privacy controls</li>
                 <li>• Audit trails</li>
                 <li>• Enterprise security</li>
@@ -370,10 +398,13 @@ export default function Home() {
             }}
           >
             <h3 style={{ marginBottom: '1rem' }}>Transparent Pricing for NYC Businesses</h3>
-            <p style={{ maxWidth: '700px', margin: '0 auto 1.5rem' }}>
-              Basic workflow automations start around <strong>$3,500</strong>. Full AI agent deployments
-              range from <strong>$8,000 to $25,000+</strong> depending on complexity. We'll give you an
-              honest quote after understanding your actual needs—no bait-and-switch.
+            <p style={{ maxWidth: '700px', margin: '0 auto 1rem' }}>
+              Basic workflow automations typically start around <strong>$3,500</strong>. Full AI agent
+              deployments range from <strong>$8,000 to $25,000+</strong> depending on complexity. We'll
+              give you an honest quote after understanding your actual needs—no bait-and-switch.
+            </p>
+            <p style={{ fontSize: '0.875rem', color: 'var(--text-tertiary)', marginBottom: '1.5rem' }}>
+              Pricing varies by scope, complexity, and compliance requirements.
             </p>
             <a href="#contact" className="btn btn-primary">Get a Custom Quote</a>
           </div>
@@ -454,7 +485,7 @@ export default function Home() {
             />
             <FAQItem
               question="How long does it take to implement AI automation?"
-              answer="Last month we had a client live in 5 days. Simple workflow connecting their booking system to their CRM. Done. But that's the easy stuff. If you need an AI agent that understands your specific industry lingo, integrates with 4 different systems, and needs compliance sign-off? More like 6-8 weeks. We always try to get you a quick win in the first 2 weeks though, even on bigger projects. Keeps the momentum going."
+              answer="Simple workflows—like connecting your booking system to your CRM—can sometimes be live in under a week. More complex projects involving custom AI agents, multiple integrations, or compliance requirements typically take 4-8 weeks. We try to get you a quick win early, even on bigger projects. Keeps the momentum going."
             />
             <FAQItem
               question="Do you work with businesses outside Manhattan?"
@@ -485,70 +516,105 @@ export default function Home() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem', alignItems: 'center' }}>
             <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
-              <span className="badge" style={{ marginBottom: '1.5rem' }}>About Us</span>
+              <span className="badge" style={{ marginBottom: '1.5rem' }}>About the Team</span>
               <h2 style={{ marginBottom: '1.5rem' }}>
-                NYC's AI Automation Partner
+                AI Automation for NYC Businesses
               </h2>
               <p style={{ marginBottom: '1.5rem' }}>
-                We're an extension of <a href="https://owntheclimb.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-primary)' }}>Own The Climb</a>,
-                a consulting firm that's helped businesses across the East Coast deploy AI that actually
-                delivers results—not just impressive demos.
+                We're a collective of AI engineers and automation specialists focused on implementing
+                practical, production-ready AI systems for service-based businesses.
               </p>
               <p style={{ marginBottom: '1.5rem' }}>
-                I started this after watching too many businesses get burned by AI consultants who'd
-                never actually run a company. They'd hand over a 50-page strategy deck and disappear.
-                We do it differently. Shimon Carroll, founder, has been in the trenches since 2024
-                building stuff that works. Not theory. Not decks. Working systems that save real money.
+                We work remotely with NYC companies to deliver fast, compliant automation that reduces
+                manual workload and improves operational efficiency. No 50-page strategy decks. No
+                vaporware demos. Just working systems that solve real problems.
               </p>
               <p style={{ marginBottom: '2rem' }}>
                 We serve clients across Manhattan, Brooklyn, Queens, the Bronx, Staten Island, Long
-                Island, Westchester, and New Jersey. Whether you're a 10-person agency or a 500-employee
+                Island, Westchester, and New Jersey. Whether you're a small agency or a mid-market
                 enterprise, we scale our approach to fit your needs and budget.
               </p>
 
-              {/* Trust signals */}
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '2rem',
-                  justifyContent: 'center',
-                  marginBottom: '2rem'
-                }}
-              >
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--accent-primary)' }}>
-                    5.0<span style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>/5</span>
-                  </div>
-                  <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Client Rating</div>
-                </div>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--accent-primary)' }}>2024</div>
-                  <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Founded</div>
-                </div>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--accent-primary)' }}>15+</div>
-                  <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Clients Served</div>
-                </div>
-              </div>
+              <a href="#contact" className="btn btn-primary">
+                Schedule a Free Call
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a
-                  href="https://www.linkedin.com/in/shimon-carroll/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                >
-                  View LinkedIn Profile
-                </a>
-                <a
-                  href="https://owntheclimb.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                >
-                  Visit Main Site
-                </a>
+      {/* ==================== USE CASES SECTION ==================== */}
+      <section id="use-cases" style={{ background: 'var(--bg-secondary)' }}>
+        <div className="container">
+          <div className="section-header">
+            <span className="badge">Use Cases</span>
+            <h2>Common NYC AI Automation Use Cases</h2>
+            <p>
+              These are the kinds of problems we solve for service-based businesses in New York.
+            </p>
+          </div>
+
+          <div className="grid-2" style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <div className="card">
+              <h3 style={{ marginBottom: '0.75rem' }}>Lead Qualification Automation</h3>
+              <p>
+                AI that qualifies inbound leads, asks the right questions, and routes hot prospects
+                to your sales team. No more wasted time on tire-kickers.
+              </p>
+            </div>
+            <div className="card">
+              <h3 style={{ marginBottom: '0.75rem' }}>Intake & Onboarding Workflows</h3>
+              <p>
+                Automated client onboarding that collects documents, sends reminders, and updates
+                your systems—without manual data entry.
+              </p>
+            </div>
+            <div className="card">
+              <h3 style={{ marginBottom: '0.75rem' }}>CRM & Ops Automation</h3>
+              <p>
+                Keep your CRM, invoicing, and project management tools in sync. When something
+                changes in one place, everything updates automatically.
+              </p>
+            </div>
+            <div className="card">
+              <h3 style={{ marginBottom: '0.75rem' }}>AI Chat for Inbound Traffic</h3>
+              <p>
+                24/7 AI chat that handles FAQs, books appointments, and captures leads when
+                your team isn't available.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== SUCCESS CRITERIA SECTION ==================== */}
+      <section id="success">
+        <div className="container">
+          <div className="section-header">
+            <span className="badge">What Success Looks Like</span>
+            <h2>What a Successful AI Automation Project Looks Like</h2>
+            <p>
+              Here's what our clients typically experience after implementation.
+            </p>
+          </div>
+
+          <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+            <div style={{ display: 'grid', gap: '1rem' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                <div style={{ color: 'var(--accent-primary)', flexShrink: 0 }}><CheckIcon /></div>
+                <p><strong>Reduced admin workload</strong> — Your team spends less time on repetitive tasks</p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                <div style={{ color: 'var(--accent-primary)', flexShrink: 0 }}><CheckIcon /></div>
+                <p><strong>Faster response times</strong> — Leads and clients get answers immediately, not hours later</p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                <div style={{ color: 'var(--accent-primary)', flexShrink: 0 }}><CheckIcon /></div>
+                <p><strong>Cleaner internal data</strong> — Information flows between systems without manual entry</p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                <div style={{ color: 'var(--accent-primary)', flexShrink: 0 }}><CheckIcon /></div>
+                <p><strong>Better lead qualification</strong> — AI filters out tire-kickers before they reach your team</p>
               </div>
             </div>
           </div>
@@ -562,8 +628,9 @@ export default function Home() {
             <span className="badge">Get Started</span>
             <h2>Ready to Automate Your NYC Business?</h2>
             <p>
-              Got a question? Shoot us a message or just call. I personally get back to everyone
-              within 24 hours. If AI isn't right for you, I'll tell you that too. No pitch, no deck.
+              Got a question? Shoot us a message or just call. We'll get back to you within one
+              business day. If AI isn't the right fit for your situation, we'll tell you that too.
+              No obligation, no pressure.
             </p>
           </div>
 
@@ -576,62 +643,26 @@ export default function Home() {
               margin: '0 auto'
             }}
           >
-            {/* Contact Form */}
-            <div>
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="name" className="form-label">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="form-input"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    placeholder="Your name"
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="email" className="form-label">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="form-input"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    placeholder="your@email.com"
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="phone" className="form-label">Phone</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="form-input"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    placeholder="(555) 123-4567"
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="message" className="form-label">How can we help?</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    className="form-textarea"
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    placeholder="Tell us about your business and what you're looking to automate..."
-                  />
-                </div>
-                <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
-                  Send Message
-                </button>
-              </form>
+            {/* Tally Contact Form */}
+            <div style={{ minHeight: '400px' }}>
+              <iframe
+                data-tally-src="https://tally.so/embed/zx7Ep8?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy"
+                width="100%"
+                height="400"
+                frameBorder="0"
+                marginHeight="0"
+                marginWidth="0"
+                title="Contact Form"
+                style={{ border: 'none' }}
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s)}
+                  `
+                }}
+              />
             </div>
 
             {/* Contact Info */}
@@ -639,7 +670,7 @@ export default function Home() {
               <div style={{ marginBottom: '2rem' }}>
                 <h3 style={{ marginBottom: '0.5rem', fontSize: '1.125rem' }}>Call Us Directly</h3>
                 <a
-                  href="tel:+14432652667"
+                  href="tel:+16468142452"
                   style={{
                     fontSize: '1.75rem',
                     fontWeight: '700',
@@ -647,8 +678,11 @@ export default function Home() {
                     fontFamily: 'var(--font-mono)'
                   }}
                 >
-                  (443) 265-2667
+                  (646) 814-2452
                 </a>
+                <p style={{ fontSize: '0.875rem', color: 'var(--text-tertiary)', marginTop: '0.5rem' }}>
+                  Remote-first team serving NYC businesses
+                </p>
               </div>
 
               <div style={{ marginBottom: '2rem' }}>
@@ -686,18 +720,10 @@ export default function Home() {
         <div className="container">
           <div style={{ textAlign: 'center' }}>
             <p style={{ marginBottom: '1rem', fontSize: '0.875rem' }}>
-              © {new Date().getFullYear()} AI Automation Agency New York • A division of{' '}
-              <a
-                href="https://owntheclimb.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: 'var(--accent-primary)' }}
-              >
-                Own The Climb
-              </a>
+              © {new Date().getFullYear()} AI Automation Agency New York • Serving NYC businesses remotely
             </p>
             <p style={{ fontSize: '0.8125rem', color: 'var(--text-tertiary)' }}>
-              AI Automation Services in New York City • Manhattan • Brooklyn • Queens • Bronx • Staten Island
+              AI Automation Services for New York City • Manhattan • Brooklyn • Queens • Bronx • Staten Island
             </p>
           </div>
         </div>

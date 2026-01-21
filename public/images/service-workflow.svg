@@ -1,0 +1,86 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fde047;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#eab308;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" fill="#0a0a0a"/>
+
+  <!-- Connection lines -->
+  <g stroke="#fde047" stroke-width="2" fill="none" opacity="0.4">
+    <path d="M 110 75 L 160 75 L 160 150 L 200 150"/>
+    <path d="M 110 150 L 200 150"/>
+    <path d="M 110 225 L 160 225 L 160 150 L 200 150"/>
+    <path d="M 290 150 L 350 150"/>
+  </g>
+
+  <!-- Input nodes (left side) -->
+  <!-- CRM -->
+  <g transform="translate(40, 45)">
+    <rect width="70" height="55" rx="8" fill="#1a1a1a" stroke="#fde047" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="35" cy="20" r="10" fill="none" stroke="#fde047" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="35" cy="20" r="4" fill="#fde047" opacity="0.5"/>
+    <rect x="15" y="35" width="40" height="5" rx="2" fill="#fde047" opacity="0.3"/>
+    <rect x="15" y="43" width="25" height="4" rx="2" fill="#fde047" opacity="0.2"/>
+  </g>
+
+  <!-- Documents -->
+  <g transform="translate(40, 120)">
+    <rect width="70" height="55" rx="8" fill="#1a1a1a" stroke="#fde047" stroke-width="1.5" opacity="0.8"/>
+    <rect x="20" y="12" width="30" height="35" rx="3" fill="none" stroke="#fde047" stroke-width="1" opacity="0.5"/>
+    <rect x="25" y="18" width="20" height="3" rx="1" fill="#fde047" opacity="0.4"/>
+    <rect x="25" y="24" width="18" height="3" rx="1" fill="#fde047" opacity="0.3"/>
+    <rect x="25" y="30" width="15" height="3" rx="1" fill="#fde047" opacity="0.3"/>
+    <rect x="25" y="36" width="20" height="3" rx="1" fill="#fde047" opacity="0.3"/>
+  </g>
+
+  <!-- Invoicing -->
+  <g transform="translate(40, 195)">
+    <rect width="70" height="55" rx="8" fill="#1a1a1a" stroke="#fde047" stroke-width="1.5" opacity="0.8"/>
+    <rect x="15" y="12" width="40" height="30" rx="3" fill="none" stroke="#fde047" stroke-width="1" opacity="0.5"/>
+    <rect x="20" y="18" width="15" height="4" rx="1" fill="#fde047" opacity="0.5"/>
+    <rect x="40" y="18" width="10" height="4" rx="1" fill="#fde047" opacity="0.3"/>
+    <line x1="15" y1="28" x2="55" y2="28" stroke="#fde047" stroke-width="1" opacity="0.3"/>
+    <rect x="35" y="32" width="15" height="5" rx="1" fill="#fde047" opacity="0.4"/>
+  </g>
+
+  <!-- Central AI processor -->
+  <g transform="translate(200, 115)">
+    <rect width="90" height="70" rx="10" fill="#1a1a1a" stroke="#fde047" stroke-width="2" opacity="0.9"/>
+    <circle cx="45" cy="35" r="20" fill="url(#wfGrad)" opacity="0.8"/>
+    <circle cx="45" cy="35" r="12" fill="#0a0a0a"/>
+    <circle cx="45" cy="35" r="6" fill="#fde047" opacity="0.7">
+      <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Gear teeth -->
+    <g stroke="#fde047" stroke-width="2" opacity="0.6">
+      <line x1="45" y1="10" x2="45" y2="18"/>
+      <line x1="45" y1="52" x2="45" y2="60"/>
+      <line x1="20" y1="35" x2="28" y2="35"/>
+      <line x1="62" y1="35" x2="70" y2="35"/>
+    </g>
+  </g>
+
+  <!-- Output node -->
+  <g transform="translate(330, 115)">
+    <rect width="55" height="70" rx="8" fill="#1a1a1a" stroke="#fde047" stroke-width="1.5" opacity="0.8"/>
+    <!-- Dashboard mini chart -->
+    <rect x="10" y="12" width="35" height="20" rx="3" fill="none" stroke="#fde047" stroke-width="1" opacity="0.4"/>
+    <path d="M 15 27 L 22 22 L 30 25 L 40 17" stroke="#fde047" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <!-- Status bars -->
+    <rect x="10" y="38" width="25" height="6" rx="2" fill="#fde047" opacity="0.5"/>
+    <rect x="10" y="48" width="18" height="6" rx="2" fill="#fde047" opacity="0.3"/>
+    <rect x="10" y="58" width="30" height="6" rx="2" fill="#fde047" opacity="0.4"/>
+  </g>
+
+  <!-- Data flow animation dots -->
+  <circle r="3" fill="#fde047">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M 110 150 L 200 150"/>
+  </circle>
+  <circle r="3" fill="#fde047">
+    <animateMotion dur="2s" repeatCount="indefinite" begin="1s" path="M 290 150 L 350 150"/>
+  </circle>
+</svg>

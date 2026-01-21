@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fde047;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ca8a04;stop-opacity:1" />
+    </linearGradient>
+
+    <radialGradient id="shieldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fde047;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#fde047;stop-opacity:0" />
+    </radialGradient>
+
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fde047;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#fde047;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#fde047;stop-opacity:0" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" fill="#0a0a0a"/>
+
+  <!-- Shield glow background -->
+  <ellipse cx="200" cy="130" rx="90" ry="100" fill="url(#shieldGlow)">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Secure connection lines -->
+  <g stroke="#fde047" stroke-width="1.5" fill="none" opacity="0.3">
+    <!-- Left incoming lines -->
+    <path d="M 30 80 Q 100 80 160 115">
+      <animate attributeName="stroke-dashoffset" values="100;0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 30 150 L 155 150">
+      <animate attributeName="stroke-dashoffset" values="100;0" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 30 220 Q 100 220 160 185">
+      <animate attributeName="stroke-dashoffset" values="100;0" dur="3s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Right outgoing lines -->
+    <path d="M 240 115 Q 300 80 370 80">
+      <animate attributeName="stroke-dashoffset" values="0;-100" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 245 150 L 370 150">
+      <animate attributeName="stroke-dashoffset" values="0;-100" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 240 185 Q 300 220 370 220">
+      <animate attributeName="stroke-dashoffset" values="0;-100" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g stroke="#fde047" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="8,6">
+    <path d="M 30 80 Q 100 80 160 115"/>
+    <path d="M 30 150 L 155 150"/>
+    <path d="M 30 220 Q 100 220 160 185"/>
+    <path d="M 240 115 Q 300 80 370 80"/>
+    <path d="M 245 150 L 370 150"/>
+    <path d="M 240 185 Q 300 220 370 220"/>
+  </g>
+
+  <!-- Central Shield -->
+  <g transform="translate(200, 150)" filter="url(#strongGlow)">
+    <!-- Outer shield ring pulse -->
+    <path d="M 0 -65 L 50 -50 L 50 10 Q 50 55 0 75 Q -50 55 -50 10 L -50 -50 Z"
+          fill="none" stroke="#fde047" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Main shield shape -->
+    <path d="M 0 -55 L 42 -42 L 42 5 Q 42 45 0 62 Q -42 45 -42 5 L -42 -42 Z"
+          fill="#0f0f0f" stroke="url(#shieldGrad)" stroke-width="3"/>
+
+    <!-- Inner shield detail -->
+    <path d="M 0 -40 L 30 -30 L 30 0 Q 30 30 0 45 Q -30 30 -30 0 L -30 -30 Z"
+          fill="none" stroke="#fde047" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- Checkmark -->
+    <g filter="url(#glow)">
+      <path d="M -18 5 L -5 20 L 22 -15"
+            stroke="#fde047" stroke-width="5" fill="none"
+            stroke-linecap="round" stroke-linejoin="round">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Animated pulse rings -->
+    <circle r="55" fill="none" stroke="#fde047" stroke-width="1" opacity="0.2">
+      <animate attributeName="r" values="55;75;55" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Left data nodes -->
+  <g filter="url(#glow)">
+    <!-- Top left node -->
+    <rect x="15" y="60" width="45" height="40" rx="6" fill="#131313" stroke="#fde047" stroke-width="1.5" opacity="0.8"/>
+    <rect x="22" y="70" width="31" height="4" rx="2" fill="#fde047" opacity="0.5"/>
+    <rect x="22" y="78" width="24" height="3" rx="1.5" fill="#fde047" opacity="0.3"/>
+    <rect x="22" y="85" width="28" height="3" rx="1.5" fill="#fde047" opacity="0.3"/>
+    <circle cx="52" y="95" r="4" fill="#fde047" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Middle left node -->
+    <rect x="15" y="130" width="45" height="40" rx="6" fill="#131313" stroke="#fde047" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="37" cy="145" r="8" fill="none" stroke="#fde047" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="37" cy="145" r="3" fill="#fde047" opacity="0.6"/>
+    <rect x="22" y="158" width="31" height="3" rx="1.5" fill="#fde047" opacity="0.3"/>
+    <circle cx="52" cy="165" r="4" fill="#fde047" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+
+    <!-- Bottom left node -->
+    <rect x="15" y="200" width="45" height="40" rx="6" fill="#131313" stroke="#fde047" stroke-width="1.5" opacity="0.8"/>
+    <rect x="22" y="210" width="31" height="20" rx="3" fill="none" stroke="#fde047" stroke-width="1" opacity="0.4"/>
+    <path d="M 22 210 L 37 220 L 53 210" fill="none" stroke="#fde047" stroke-width="1" opacity="0.4"/>
+    <circle cx="52" cy="235" r="4" fill="#fde047" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="1.5s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+  </g>
+
+  <!-- Right secure output nodes -->
+  <g filter="url(#glow)">
+    <!-- Top right node -->
+    <rect x="340" y="60" width="45" height="40" rx="6" fill="#131313" stroke="#fde047" stroke-width="1.5" opacity="0.8"/>
+    <path d="M 350 75 L 358 83 L 375 68" stroke="#fde047" stroke-width="2.5" fill="none" opacity="0.7"/>
+    <rect x="350" y="88" width="26" height="3" rx="1.5" fill="#fde047" opacity="0.3"/>
+    <circle cx="348" cy="95" r="4" fill="#fde047" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="1.5s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+
+    <!-- Middle right node -->
+    <rect x="340" y="130" width="45" height="40" rx="6" fill="#131313" stroke="#fde047" stroke-width="1.5" opacity="0.8"/>
+    <path d="M 350 145 L 358 153 L 375 138" stroke="#fde047" stroke-width="2.5" fill="none" opacity="0.7"/>
+    <rect x="350" y="158" width="26" height="3" rx="1.5" fill="#fde047" opacity="0.3"/>
+    <circle cx="348" cy="165" r="4" fill="#fde047" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="1.5s" repeatCount="indefinite" begin="0.8s"/>
+    </circle>
+
+    <!-- Bottom right node -->
+    <rect x="340" y="200" width="45" height="40" rx="6" fill="#131313" stroke="#fde047" stroke-width="1.5" opacity="0.8"/>
+    <path d="M 350 215 L 358 223 L 375 208" stroke="#fde047" stroke-width="2.5" fill="none" opacity="0.7"/>
+    <rect x="350" y="228" width="26" height="3" rx="1.5" fill="#fde047" opacity="0.3"/>
+    <circle cx="348" cy="235" r="4" fill="#fde047" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="1.5s" repeatCount="indefinite" begin="1.3s"/>
+    </circle>
+  </g>
+
+  <!-- Compliance badges -->
+  <g transform="translate(110, 265)" filter="url(#glow)">
+    <rect width="50" height="22" rx="4" fill="#131313" stroke="#fde047" stroke-width="1" opacity="0.7"/>
+    <rect x="8" y="7" width="34" height="8" rx="2" fill="#fde047" opacity="0.5"/>
+  </g>
+  <g transform="translate(175, 265)" filter="url(#glow)">
+    <rect width="50" height="22" rx="4" fill="#131313" stroke="#fde047" stroke-width="1" opacity="0.7"/>
+    <rect x="8" y="7" width="34" height="8" rx="2" fill="#fde047" opacity="0.45"/>
+  </g>
+  <g transform="translate(240, 265)" filter="url(#glow)">
+    <rect width="50" height="22" rx="4" fill="#131313" stroke="#fde047" stroke-width="1" opacity="0.7"/>
+    <rect x="8" y="7" width="34" height="8" rx="2" fill="#fde047" opacity="0.4"/>
+  </g>
+
+  <!-- Flowing data particles -->
+  <circle r="4" fill="#fde047" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M 60 80 Q 110 80 160 115"/>
+  </circle>
+  <circle r="4" fill="#fde047" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" begin="0.7s" path="M 60 150 L 155 150"/>
+  </circle>
+  <circle r="4" fill="#fde047" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" begin="1.4s" path="M 60 220 Q 110 220 160 185"/>
+  </circle>
+  <circle r="4" fill="#fde047" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" begin="0.5s" path="M 240 115 Q 290 80 340 80"/>
+  </circle>
+  <circle r="4" fill="#fde047" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" begin="1.2s" path="M 245 150 L 340 150"/>
+  </circle>
+  <circle r="4" fill="#fde047" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" begin="1.9s" path="M 240 185 Q 290 220 340 220"/>
+  </circle>
+</svg>
