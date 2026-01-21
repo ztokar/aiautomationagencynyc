@@ -1,9 +1,16 @@
 import os
 from google import genai
 from google.genai import types
+from dotenv import load_dotenv
 
-# API Key
-API_KEY = "AIzaSyD37aKWHctyq-5987QAeO0nt2UvE7gqvAQ"
+# Load environment variables
+load_dotenv()
+
+# API Key from environment variable
+API_KEY = os.getenv("GOOGLE_GENAI_API_KEY")
+if not API_KEY:
+    raise ValueError("GOOGLE_GENAI_API_KEY environment variable is required. Please set it in your .env file.")
+
 client = genai.Client(api_key=API_KEY)
 
 # Global style suffix
