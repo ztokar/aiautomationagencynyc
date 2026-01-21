@@ -52,9 +52,6 @@ export const metadata = {
   alternates: {
     canonical: 'https://aiautomationagencynewyork.com',
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
 }
 
 // Organization + Service Schema for NYC AI Automation (remote-first)
