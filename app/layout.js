@@ -66,7 +66,7 @@ const jsonLd = {
       description: 'AI automation agency serving New York businesses remotely. We help NYC service businesses reduce manual workload through practical AI automation.',
       url: 'https://aiautomationagencynewyork.com',
       telephone: '+1-646-814-2452',
-      email: 'info@owntheclimb.com',
+      email: 'info@aiautomationagencynyc.com',
       areaServed: [
         { '@type': 'City', name: 'New York City' },
         { '@type': 'AdministrativeArea', name: 'Manhattan' },
