@@ -11,6 +11,18 @@ export const metadata = {
   authors: [{ name: 'AI Automation Agency New York' }],
   creator: 'AI Automation Agency New York',
   publisher: 'AI Automation Agency New York',
+  icons: {
+    icon: [
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon.ico', sizes: '16x16 32x32 48x48' },
+    ],
+    shortcut: [{ url: '/favicon.ico' }],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   formatDetection: {
     telephone: true,
     email: true,
