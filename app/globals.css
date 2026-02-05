@@ -524,3 +524,25 @@ a[href^="tel:"] {
     left: 1.1875rem;
   }
 }
+
+/* Social Media Icons */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--accent-glow);
+  border: 1px solid rgba(253, 224, 71, 0.3);
+  border-radius: 50%;
+  color: var(--accent-primary);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  box-shadow: 0 0 30px rgba(253, 224, 71, 0.3);
+  transform: translateY(-3px);
+}
