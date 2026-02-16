@@ -145,7 +145,7 @@ export default function Home() {
 
             {/* H1 with primary keyword */}
             <h1 className="animate-in delay-1" style={{ marginBottom: '1.5rem' }}>
-              AI Automation Agency for{' '}
+              AI Automation Agency New York for{' '}
               <span className="text-gradient">NYC Businesses</span>
             </h1>
 
@@ -240,7 +240,7 @@ export default function Home() {
               hours every week on tasks a well-designed AI system could handle automatically.
             </p>
             <p style={{ marginBottom: '2rem' }}>
-              We're an <strong>AI automation agency serving New York</strong> that focuses on one thing:
+              We're <strong>AI Automation Agency New York</strong>—we focus on one thing:
               reducing manual workload for service-based businesses. Brooklyn startup? Manhattan law firm?
               Queens-based agency? We build AI that works in the real world—not impressive demos
               that get filed away and forgotten.
@@ -518,7 +518,7 @@ export default function Home() {
             <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
               <span className="badge" style={{ marginBottom: '1.5rem' }}>About the Team</span>
               <h2 style={{ marginBottom: '1.5rem' }}>
-                AI Automation for NYC Businesses
+                Your AI Automation Agency New York Partner
               </h2>
               <p style={{ marginBottom: '1.5rem' }}>
                 We're a collective of AI engineers and automation specialists focused on implementing

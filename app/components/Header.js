@@ -67,7 +67,7 @@ export default function Header() {
             onMouseLeave={(e) => e.target.style.color = 'var(--text-primary)'}
           >
             <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--accent-primary)' }}>&lt;AI/&gt;</span>
-            <span style={{ letterSpacing: '-0.02em' }}>Automation Agency NYC</span>
+            <span style={{ letterSpacing: '-0.02em' }}>Automation Agency New York</span>
           </a>
 
           {/* Desktop Navigation */}
