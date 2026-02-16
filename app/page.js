@@ -145,8 +145,8 @@ export default function Home() {
 
             {/* H1 with primary keyword */}
             <h1 className="animate-in delay-1" style={{ marginBottom: '1.5rem' }}>
-              AI Automation Agency New York for{' '}
-              <span className="text-gradient">NYC Businesses</span>
+              AI Automation Agency{' '}
+              <span className="text-gradient">New York</span>
             </h1>
 
             {/* Subheadline with value proposition */}
