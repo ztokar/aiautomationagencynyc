@@ -1,4 +1,5 @@
 import './globals.css'
+import Header from './components/Header'
 
 export const metadata = {
   metadataBase: new URL('https://aiautomationagencynewyork.com'),
@@ -205,6 +206,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <div className="noise-overlay" aria-hidden="true" />
+        <Header />
         {children}
       </body>
     </html>

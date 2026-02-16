@@ -91,7 +91,7 @@ function FAQItem({ question, answer }) {
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ paddingTop: '72px' }}>
       {/* ==================== HERO SECTION ==================== */}
       <section
         id="hero"
