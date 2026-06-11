@@ -30,10 +30,10 @@ export default function Header() {
   }, [])
 
   const navLinks = [
-    { href: '#services', label: 'Services' },
-    { href: '#process', label: 'How It Works' },
-    { href: '#faq', label: 'FAQ' },
-    { href: '#about', label: 'About' },
+    { href: '/#services', label: 'Services' },
+    { href: '/#process', label: 'How It Works' },
+    { href: '/#faq', label: 'FAQ' },
+    { href: '/#about', label: 'About' },
   ]
 
   return (
@@ -104,7 +104,7 @@ export default function Header() {
 
             {/* Desktop CTA */}
             <a
-              href="#contact"
+              href="/#contact"
               className="btn btn-primary desktop-cta"
               style={{
                 padding: '0.625rem 1.5rem',
@@ -184,7 +184,7 @@ export default function Header() {
           ))}
           <li style={{ marginTop: '1.5rem' }}>
             <a
-              href="#contact"
+              href="/#contact"
               className="btn btn-primary"
               onClick={() => setIsMobileMenuOpen(false)}
               style={{ width: '100%' }}

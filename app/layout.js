@@ -1,8 +1,9 @@
 import './globals.css'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 export const metadata = {
-  metadataBase: new URL('https://aiautomationagencynewyork.com'),
+  metadataBase: new URL('https://www.aiautomationagencynewyork.com'),
   verification: {
     google: 'FAauTfdwpGeI0DZd2-ytX9QlUm2Jx0V3NA8lEv813ZQ',
   },
@@ -32,7 +33,7 @@ export const metadata = {
   openGraph: {
     title: 'AI Automation Agency New York | Practical AI for NYC Businesses',
     description: 'AI automation agency serving New York businesses. We help NYC service businesses reduce manual workload through practical AI automation.',
-    url: 'https://aiautomationagencynewyork.com',
+    url: 'https://www.aiautomationagencynewyork.com',
     siteName: 'AI Automation Agency New York',
     locale: 'en_US',
     type: 'website',
@@ -63,23 +64,29 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://aiautomationagencynewyork.com',
+    canonical: 'https://www.aiautomationagencynewyork.com',
   },
 }
 
-// Organization + Service Schema for NYC AI Automation (remote-first)
+// Site-wide Organization + WebSite schema (page-specific Service/FAQ schema lives on each page)
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://aiautomationagencynewyork.com/#organization',
+      '@id': 'https://www.aiautomationagencynewyork.com/#organization',
       name: 'AI Automation Agency New York',
       alternateName: 'NYC AI Automation',
       description: 'AI automation agency serving New York businesses remotely. We help NYC service businesses reduce manual workload through practical AI automation.',
-      url: 'https://aiautomationagencynewyork.com',
+      url: 'https://www.aiautomationagencynewyork.com',
       telephone: '+1-646-814-2452',
       email: 'info@aiautomationagencynyc.com',
+      sameAs: [
+        'https://www.linkedin.com/in/ai-automation-agency-new-york-4564583a9/',
+        'https://www.facebook.com/aiautomationagencynewyork',
+        'https://x.com/aiagencynewyork',
+        'https://www.instagram.com/aiautomationagencynewyork/',
+      ],
       areaServed: [
         { '@type': 'City', name: 'New York City' },
         { '@type': 'AdministrativeArea', name: 'Manhattan' },
@@ -93,102 +100,11 @@ const jsonLd = {
       ],
     },
     {
-      '@type': 'Service',
-      '@id': 'https://aiautomationagencynewyork.com/#service-ai-agents',
-      name: 'AI Agents & Chatbots',
-      serviceType: 'AI Agent Development',
-      provider: {
-        '@id': 'https://aiautomationagencynewyork.com/#organization',
-      },
-      areaServed: { '@type': 'City', name: 'New York City' },
-      description: 'AI agents and chatbots for lead qualification, customer support automation, and appointment scheduling for NYC businesses.',
-      url: 'https://aiautomationagencynewyork.com/ai-agents-nyc/',
-    },
-    {
-      '@type': 'Service',
-      '@id': 'https://aiautomationagencynewyork.com/#service-workflow',
-      name: 'Workflow Automation',
-      serviceType: 'Business Process Automation',
-      provider: {
-        '@id': 'https://aiautomationagencynewyork.com/#organization',
-      },
-      areaServed: { '@type': 'City', name: 'New York City' },
-      description: 'Workflow automation including CRM sync, document processing, and data entry elimination for New York businesses.',
-      url: 'https://aiautomationagencynewyork.com/workflow-automation-nyc/',
-    },
-    {
-      '@type': 'Service',
-      '@id': 'https://aiautomationagencynewyork.com/#service-custom',
-      name: 'Custom AI Solutions',
-      serviceType: 'Custom AI Development',
-      provider: {
-        '@id': 'https://aiautomationagencynewyork.com/#organization',
-      },
-      areaServed: { '@type': 'City', name: 'New York City' },
-      description: 'Bespoke AI applications, custom dashboards, private GPT deployments, and industry-specific AI tools for NYC businesses.',
-      url: 'https://aiautomationagencynewyork.com/custom-ai-solutions-nyc/',
-    },
-    {
-      '@type': 'WebPage',
-      '@id': 'https://aiautomationagencynewyork.com/#webpage',
-      url: 'https://aiautomationagencynewyork.com',
-      name: 'AI Automation Agency New York | Practical AI for NYC Businesses',
-      description: 'AI automation agency serving New York businesses. We help NYC service businesses reduce manual workload through practical AI automation.',
-      isPartOf: {
-        '@id': 'https://aiautomationagencynewyork.com/#website',
-      },
-      about: {
-        '@id': 'https://aiautomationagencynewyork.com/#organization',
-      },
-      breadcrumb: {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: 'https://aiautomationagencynewyork.com',
-          },
-        ],
-      },
-    },
-    {
-      '@type': 'FAQPage',
-      '@id': 'https://aiautomationagencynewyork.com/#faq',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'How much does AI automation cost for New York businesses?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'AI automation projects for NYC businesses typically range from $3,500 for basic workflow automation to $25,000+ for more complex AI agent deployments. Pricing varies by scope and complexity. We offer free consultations to assess your specific needs.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How long does it take to implement AI automation?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Most AI automation projects are completed within 2-8 weeks. Simple workflow automations can sometimes be live within days, while complex AI agent systems may take 4-8 weeks.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Do you work with businesses outside Manhattan?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes. We serve NYC businesses across all five boroughs—Manhattan, Brooklyn, Queens, the Bronx, and Staten Island—plus Long Island, Westchester, and New Jersey. We work remotely with on-site visits as needed.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What industries do you specialize in for AI automation?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'We work with NYC service businesses across various industries including professional services, healthcare, real estate, legal, and e-commerce. Our AI solutions are customized to your specific workflows and compliance requirements.',
-          },
-        },
-      ],
+      '@type': 'WebSite',
+      '@id': 'https://www.aiautomationagencynewyork.com/#website',
+      url: 'https://www.aiautomationagencynewyork.com',
+      name: 'AI Automation Agency New York',
+      publisher: { '@id': 'https://www.aiautomationagencynewyork.com/#organization' },
     },
   ],
 }
@@ -208,6 +124,7 @@ export default function RootLayout({ children }) {
         <div className="noise-overlay" aria-hidden="true" />
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
