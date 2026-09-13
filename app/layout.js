@@ -80,7 +80,7 @@ const jsonLd = {
       description: 'AI automation agency serving New York businesses remotely. We help NYC service businesses reduce manual workload through practical AI automation.',
       url: 'https://www.aiautomationagencynewyork.com',
       telephone: '+1-646-814-2452',
-      email: 'info@aiautomationagencynyc.com',
+      email: 'info@aiautomationagencynewyork.com',
       sameAs: [
         'https://www.linkedin.com/in/ai-automation-agency-new-york-4564583a9/',
         'https://www.facebook.com/aiautomationagencynewyork',

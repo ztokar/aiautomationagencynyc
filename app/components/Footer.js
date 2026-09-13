@@ -84,7 +84,7 @@ export default function Footer() {
           <div>
             <div style={colHeading}>Get in Touch</div>
             <a href="tel:+16468142452" style={{ ...linkStyle, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', fontWeight: 700 }}>(646) 814-2452</a>
-            <a href="mailto:info@aiautomationagencynyc.com" style={linkStyle}>info@aiautomationagencynyc.com</a>
+            <a href="mailto:info@aiautomationagencynewyork.com" style={linkStyle}>info@aiautomationagencynewyork.com</a>
             <p style={{ fontSize: '0.875rem', marginTop: '0.25rem' }}>Mon–Fri, 9am–6pm EST</p>
             <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem' }}>
               {socials.map((s) => (

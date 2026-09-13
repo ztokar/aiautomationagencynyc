@@ -91,7 +91,7 @@ export default function PrivacyPolicy() {
             <h2 style={h2}>Contact Us</h2>
             <p style={p}>
               Questions about this policy? Email{' '}
-              <a href="mailto:info@aiautomationagencynyc.com" style={{ color: 'var(--accent-primary)' }}>info@aiautomationagencynyc.com</a>{' '}
+              <a href="mailto:info@aiautomationagencynewyork.com" style={{ color: 'var(--accent-primary)' }}>info@aiautomationagencynewyork.com</a>{' '}
               or call <a href="tel:+16468142452" style={{ color: 'var(--accent-primary)' }}>(646) 814-2452</a>.
             </p>
           </div>

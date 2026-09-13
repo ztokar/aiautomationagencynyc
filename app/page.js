@@ -740,10 +740,10 @@ export default function Home() {
               <div style={{ marginBottom: '2rem' }}>
                 <h3 style={{ marginBottom: '0.5rem', fontSize: '1.125rem' }}>Email</h3>
                 <a
-                  href="mailto:info@aiautomationagencynyc.com"
+                  href="mailto:info@aiautomationagencynewyork.com"
                   style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}
                 >
-                  info@aiautomationagencynyc.com
+                  info@aiautomationagencynewyork.com
                 </a>
               </div>
 
