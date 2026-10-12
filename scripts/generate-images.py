@@ -3,7 +3,7 @@ from google import genai
 from google.genai import types
 
 # API Key
-API_KEY = "AIzaSyD37aKWHctyq-5987QAeO0nt2UvE7gqvAQ"
+API_KEY = os.environ["GEMINI_API_KEY"]
 client = genai.Client(api_key=API_KEY)
 
 # Global style suffix
